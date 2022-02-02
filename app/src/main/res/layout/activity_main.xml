@@ -1,0 +1,402 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+
+        <RelativeLayout
+            android:id="@+id/player1_section"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/white">
+
+            <TextView
+                android:id="@+id/player1_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="2dp"
+                android:text="@string/p1_title"
+                android:textColor="@color/black"
+                android:textSize="14dp" />
+
+            <TextView
+                android:id="@+id/player1_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/player1_title"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="5dp"
+                android:text="Chosen Number"
+                android:textSize="14dp" />
+
+            <TextView
+                android:id="@+id/player1_number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/player1_text"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="2dp"
+                android:textColor="@color/black"
+                android:textSize="20dp" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/player1_number"
+                android:layout_marginTop="5dp"
+                android:id="@+id/player1_guesses_container"
+                >
+
+                <TextView
+                    android:id="@+id/player1_guess_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="2dp"
+                    android:text="Guesses"
+                    android:textSize="14dp" />
+
+                <ScrollView
+                    android:id="@+id/player1_guesses"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:layout_below="@id/player1_guess_text"
+                    android:background="@color/gray">
+
+                    <TextView
+                        android:id="@+id/player1_guess_number"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="2dp"
+                        android:layout_marginRight="10dp"
+                        android:textColor="@color/black"
+                        android:textSize="14dp" />
+
+                </ScrollView>
+
+            </RelativeLayout>
+
+
+            <TextView
+                android:id="@+id/player1_hint_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/player1_guesses_container"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="5dp"
+                android:text="Hints from Opponent"
+                android:textSize="14dp" />
+
+            <LinearLayout
+                android:id="@+id/player1_hints_container"
+                android:layout_width="match_parent"
+                android:layout_below="@id/player1_hint_text"
+                android:layout_height="wrap_content">
+                <RelativeLayout
+                    android:id="@+id/player1_hint1_container"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <TextView
+                        android:id="@+id/player1_hint_1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="2dp"
+                        android:text="Guessed at Right Position"
+                        android:textSize="10dp" />
+
+                    <TextView
+                        android:id="@+id/player1_hint_1_value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/player1_hint_1"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="2dp"
+                        android:textColor="@color/black"
+                        android:textSize="12dp" />
+
+                </RelativeLayout>
+                <RelativeLayout
+                    android:id="@+id/player1_hint2_container"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <TextView
+                        android:id="@+id/player1_hint_2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="2dp"
+                        android:text="Guessed at Wrong Position"
+                        android:textSize="10dp" />
+
+                    <TextView
+                        android:id="@+id/player1_hint_2_value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/player1_hint_2"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="2dp"
+                        android:textColor="@color/black"
+                        android:textSize="12dp" />
+
+                </RelativeLayout>
+                <RelativeLayout
+                    android:id="@+id/player1_hint3_container"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <TextView
+                        android:id="@+id/player1_hint_missing_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="2dp"
+                        android:text="Missing Digit"
+                        android:textSize="10dp" />
+
+                    <TextView
+                        android:id="@+id/player1_hint_missing_digit"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/player1_hint_missing_text"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="2dp"
+                        android:textColor="@color/black"
+                        android:textSize="12dp" />
+                </RelativeLayout>
+
+            </LinearLayout>
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/player2_section"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/white">
+
+            <TextView
+                android:id="@+id/player2_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="2dp"
+                android:text="@string/p2_title"
+                android:textColor="@color/black"
+                android:textSize="14dp" />
+
+            <TextView
+                android:id="@+id/player2_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/player2_title"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="5dp"
+                android:text="Chosen Number"
+                android:textSize="14dp" />
+
+            <TextView
+                android:id="@+id/player2_number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/player2_text"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="2dp"
+                android:textColor="@color/black"
+                android:textSize="20dp" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/player2_number"
+                android:layout_marginTop="5dp"
+                android:id="@+id/player2_guesses_container"
+                >
+
+                <TextView
+                    android:id="@+id/player2_guess_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="2dp"
+                    android:text="Guesses"
+                    android:textSize="14dp" />
+
+                <ScrollView
+                    android:id="@+id/player2_guesses"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:layout_below="@id/player2_guess_text"
+                    android:background="@color/gray">
+
+                    <TextView
+                        android:id="@+id/player2_guess_number"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="2dp"
+                        android:layout_marginRight="10dp"
+                        android:textColor="@color/black"
+                        android:textSize="14dp" />
+
+                </ScrollView>
+
+            </RelativeLayout>
+
+
+            <TextView
+                android:id="@+id/player2_hint_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/player2_guesses_container"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="5dp"
+                android:text="Hints from Opponent"
+                android:textSize="14dp" />
+
+            <LinearLayout
+                android:id="@+id/player2_hints_container"
+                android:layout_width="match_parent"
+                android:layout_below="@id/player2_hint_text"
+                android:layout_height="wrap_content">
+                <RelativeLayout
+                    android:id="@+id/player2_hint1_container"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <TextView
+                        android:id="@+id/player2_hint_1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="2dp"
+                        android:text="Guessed at Right Position"
+                        android:textSize="10dp" />
+
+                    <TextView
+                        android:id="@+id/player2_hint_1_value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/player2_hint_1"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="2dp"
+                        android:textColor="@color/black"
+                        android:textSize="12dp" />
+
+                </RelativeLayout>
+                <RelativeLayout
+                    android:id="@+id/player2_hint2_container"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <TextView
+                        android:id="@+id/player2_hint_2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="2dp"
+                        android:text="Guessed at Wrong Position"
+                        android:textSize="10dp" />
+
+                    <TextView
+                        android:id="@+id/player2_hint_2_value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/player2_hint_2"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="2dp"
+                        android:textColor="@color/black"
+                        android:textSize="12dp" />
+
+                </RelativeLayout>
+                <RelativeLayout
+                    android:id="@+id/player2_hint3_container"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <TextView
+                        android:id="@+id/player2_hint_missing_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="2dp"
+                        android:text="Missing Digit"
+                        android:textSize="10dp" />
+
+                    <TextView
+                        android:id="@+id/player2_hint_missing_digit"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/player2_hint_missing_text"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="2dp"
+                        android:textColor="@color/black"
+                        android:textSize="12dp" />
+                </RelativeLayout>
+
+            </LinearLayout>
+
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="3"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/start_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="2dp"
+            android:text="@string/start_btn_Text" />
+
+        <TextView
+            android:id="@+id/game_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/start_button"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="2dp"
+            android:textColor="@color/black"
+            android:textSize="14dp" />
+    </RelativeLayout>
+
+
+</LinearLayout>

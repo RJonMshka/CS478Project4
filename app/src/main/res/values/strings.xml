@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">CS478Project4</string>
+    <string name="start_btn_Text">START GAME</string>
+    <string name="end_btn_Text">END GAME</string>
+    <string name="p1_title">Player 1</string>
+    <string name="p2_title">Player 2</string>
+    <string name="p1_won">Player 1 Wins</string>
+    <string name="p2_won">Player 2 Wins</string>
+    <string name="g_over">Game Over</string>
+    <string name="g_not_started">Lets Start the Game</string>
+    <string name="g_started">Game Started - Players Setting Numbers</string>
+    <string name="p1_guessing">Player 1 Guessing</string>
+    <string name="p2_guessing">Player 2 Guessing</string>
+    <string name="game_halt">Game Halted: No Winners</string>
+    <string name="game_stopped">Game Stopped</string>
+</resources>
